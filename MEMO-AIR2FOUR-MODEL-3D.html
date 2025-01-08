@@ -47,14 +47,19 @@
 
 .logo-Memo {
         position: absolute;
-        bottom: 50px; /* Adjust position below the title */
+        bottom: 60px; /* Adjust position below the title */
         width: 100%; /* Make the logo responsive */
-        height: 15%; /* Adjust height for mobile */
+        height: 100%; /* Adjust height for mobile */
         background-image: url('https://memolocks.com/wp-content/uploads/2024/07/favicon.png'); /* Replace with your logo URL */
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         z-index: 1; /* Logo should be below the title */
+      }
+.logo-link {
+        position: absolute;
+        width: 100%;
+        height: 15%;
       }
 
       a-scene {
@@ -69,11 +74,19 @@
       <!-- Title -->
       <div class="title">AIR2FOUR 3D Model</div>
 
+      
       <!-- Logo -->
       <div class="logo-Air2-line"></div>
 <!-- Logo -->
+      <a
+        href="https://memolocks.com/en/"
+        class="logo-link"
+        style="bottom: 50px;"
+        target="_blank"
+        title="Visite o site da MemoLocks"
+         >
       <div class="logo-Memo"></div>
-
+</a>
       <!-- A-Frame Scene -->
       <a-scene vr-mode-ui="enable: false;">
         <!-- Load the 3D model -->
@@ -88,7 +101,7 @@
         <a-entity
           gltf-model="#testModel"
           scale="40 40 40"
-          position="00 -3 -8"
+          position="00 -2 -8"
           play-all-model-animations=""
           look-controls
         ></a-entity>
