@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIR2MINI 3D Model</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        position: relative;
+        height: 100vh; /* Make the container fill the entire viewport height */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .title {
+        margin-top: 20px;
+        color: black;
+        font-size: 24px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 2; /* Keep the title above the logo */
+      }
+
+      .logo-Air2-line {
+        position: absolute;
+        top: 90px; /* Adjust position below the title */
+        width: 100%; /* Make the logo responsive */
+        height: 15%; /* Adjust height for mobile */
+        background-image: url('https://memolocks.com/wp-content/uploads/2024/08/aie2line-logo.svg'); /* Replace with your logo URL */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1; /* Logo should be below the title */
+      }
+
+.logo-Memo {
+        position: absolute;
+        bottom: 60px; /* Adjust position below the title */
+        width: 100%; /* Make the logo responsive */
+        height: 100%; /* Adjust height for mobile */
+        background-image: url('https://memolocks.com/wp-content/uploads/2024/07/favicon.png'); /* Replace with your logo URL */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1; /* Logo should be below the title */
+      }
+.logo-link {
+        position: absolute;
+        width: 100%;
+        height: 15%;
+      }
+
+      a-scene {
+        flex-grow: 1; /* Fill the remaining space with the A-Frame scene */
+        background-color: white;
+        z-index: 0; /* Scene is at the bottom layer */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Title -->
+      <div class="title">AIR2Mini 3D Model</div>
+
+      
+      <!-- Logo -->
+      <div class="logo-Air2-line"></div>
+<!-- Logo -->
+      <a
+        href="https://memolocks.com/en/"
+        class="logo-link"
+        style="bottom: 50px;"
+        target="_blank"
+        title="Visite o site da MemoLocks"
+         >
+      <div class="logo-Memo"></div>
+</a>
+      <!-- A-Frame Scene -->
+      <a-scene vr-mode-ui="enable: false;">
+        <!-- Load the 3D model -->
+        <a-assets>
+          <a-asset-item
+            id="testModel"
+            src="https://memo-international.github.io/Augmented-Reality/air2mini-gbl.glb"
+          ></a-asset-item>
+        </a-assets>
+
+        <!-- Display the 3D model -->
+        <a-entity
+          gltf-model="#testModel"
+          scale="40 40 40"
+          position="00 -4 -7"
+          play-all-model-animations=""
+          look-controls
+        ></a-entity>
+
+        <!-- Camera with motion controls -->
+        <a-entity camera></a-entity>
+      </a-scene>
+    </div>
+  </body>
+</html>
