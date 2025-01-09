@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +21,7 @@
 
       header img {
         width: 100px; /* Ajuste o tamanho do logotipo conforme necessário */
+        cursor: pointer; /* Para dar uma indicação de que é clicável */
       }
 
       h1 {
@@ -41,16 +42,25 @@
         z-index: 1;
       }
 
-      .icon {
+      .icon-container {
         position: absolute;
         top: 170px;
         width: 100%;
-        height: 8%;
-        background-image: url("https://memo-international.github.io/Augmented-Reality/3d-modeling.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 1;
+      }
+
+      .icon-container img {
+        width: 60px; /* Ajuste o tamanho do ícone */
+        margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+      }
+
+      .popup-text {
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
       }
 
       /* Pop-up Modal Styles */
@@ -78,9 +88,11 @@
         bottom: 0;
         text-align: center;
       }
+
       footer img {
         width: 50px;
       }
+
       footer p {
         margin: 0;
       }
@@ -104,6 +116,7 @@
       <a href="https://memolocks.com/en/" target="_blank">
         <img
           src="https://memolocks.com/wp-content/uploads/2025/01/Logo-Memo-Black.svg"
+          alt="MemoLocks Logo"
         />
       </a>
       <h1>AR2FOUR 3D Model</h1>
@@ -113,12 +126,20 @@
     <div class="logo-Air2-line"></div>
     <div class="icon"></div>
 
+    <!-- Icon with text to the right -->
+    <div class="icon-container">
+      <img
+        src="https://memo-international.github.io/Augmented-Reality/3d-modeling.png"
+        alt="Icon"
+      />
+      <div class="popup-text">Move your phone 360°</div>
+    </div>
+
     <!-- Pop-up Modal -->
     <div class="popup" id="popup">
-           <div>
+      <div>
         Interact with the 3D Model:
-        <br />Mobile: Move your device 360°. / Touch: Use gestures to rotate. /
-        Desktop: Use mouse or touchpad.
+        <br />Mobile: Move your device 360°. / Touch: Use gestures to rotate.
       </div>
     </div>
 
