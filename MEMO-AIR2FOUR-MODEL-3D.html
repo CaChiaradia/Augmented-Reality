@@ -10,6 +10,9 @@
         margin: 0;
         overflow: hidden;
         font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       /* Cabeçalho */
@@ -17,15 +20,17 @@
         background-color: #ddc39a; /* Cor do cabeçalho */
         padding: 20px;
         text-align: center;
+        width: 100%;
       }
 
       header img {
-        width: 100px; /* Ajuste o tamanho do logotipo conforme necessário */
+        width: 80px; /* Ajuste o tamanho do logotipo para responsividade */
         cursor: pointer; /* Para dar uma indicação de que é clicável */
+        max-width: 100%;
       }
 
       h1 {
-        font-size: 5vw; /* Responsividade do título */
+        font-size: 4vw; /* Responsividade do título */
         color: #fff;
         margin-top: 10px;
       }
@@ -42,6 +47,7 @@
         z-index: 1;
       }
 
+      /* Ícones e texto */
       .icon-container {
         position: absolute;
         top: 170px;
@@ -50,17 +56,20 @@
         justify-content: center;
         align-items: center;
         z-index: 1;
+        flex-direction: row;
+        gap: 10px;
       }
 
       .icon-container img {
-        width: 60px; /* Ajuste o tamanho do ícone */
-        margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+        width: 50px; /* Ajuste o tamanho do ícone */
+        max-width: 100%;
       }
 
       .popup-text {
-        font-size: 18px;
+        font-size: 4vw; /* Tornar o texto responsivo */
         color: black;
         font-weight: bold;
+        text-align: center;
       }
 
       /* Pop-up Modal Styles */
@@ -70,12 +79,13 @@
         left: 50%;
         transform: translateX(-50%);
         background-color: rgba(255, 255, 255, 0.9);
-        padding: 20px;
+        padding: 15px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         z-index: 3;
         text-align: center;
         display: block; /* Initially visible */
+        max-width: 90%;
       }
 
       /* Rodapé */
@@ -87,6 +97,7 @@
         width: 100%;
         bottom: 0;
         text-align: center;
+        font-size: 14px;
       }
 
       footer img {
@@ -124,9 +135,8 @@
 
     <!-- Logo -->
     <div class="logo-Air2-line"></div>
-    <div class="icon"></div>
 
-    <!-- Icon with text to the right -->
+    <!-- Icone com texto ao lado -->
     <div class="icon-container">
       <img
         src="https://memo-international.github.io/Augmented-Reality/3d-modeling.png"
