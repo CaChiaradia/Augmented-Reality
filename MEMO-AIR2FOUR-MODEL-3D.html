@@ -3,22 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AIR2FOUR 3D Model</title>
+    <title>AIR2MINI 3D Model</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <style>
       body {
         margin: 0;
         overflow: hidden;
         font-family: Arial, sans-serif;
-      }
-
-      .container {
-        position: relative;
-        height: 100vh; /* Make the container fill the entire viewport height */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
       }
 
       .title {
@@ -30,85 +21,136 @@
         padding: 10px 20px;
         border-radius: 5px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 2; /* Keep the title above the logo */
+        z-index: 2;
       }
 
       .logo-Air2-line {
         position: absolute;
-        top: 90px; /* Adjust position below the title */
-        width: 100%; /* Make the logo responsive */
-        height: 15%; /* Adjust height for mobile */
-        background-image: url('https://memolocks.com/wp-content/uploads/2024/08/aie2line-logo.svg'); /* Replace with your logo URL */
+        top: 90px;
+        width: 100%;
+        height: 15%;
+        background-image: url("https://memolocks.com/wp-content/uploads/2024/08/aie2line-logo.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 1; /* Logo should be below the title */
+        z-index: 1;
+      }
+      .icon {
+        position: absolute;
+        top: 210px;
+        width: 100%;
+        height: 8%;
+        background-image: url("https://memo-international.github.io/Augmented-Reality/3d-modeling.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
       }
 
-.logo-Memo {
+      /* Pop-up Modal Styles */
+      .popup { 
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 3;
+        text-align: center;
+        display: block; /* Initially visible */
+      }
+
+      .logo-Memo {
         position: absolute;
-        bottom: 60px; /* Adjust position below the title */
-        width: 100%; /* Make the logo responsive */
-        height: 100%; /* Adjust height for mobile */
-        background-image: url('https://memolocks.com/wp-content/uploads/2024/07/favicon.png'); /* Replace with your logo URL */
+        bottom: 60px;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://memolocks.com/wp-content/uploads/2024/07/favicon.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 1; /* Logo should be below the title */
+        z-index: 1;
       }
-.logo-link {
+
+      .logo-link {
         position: absolute;
         width: 100%;
         height: 15%;
       }
 
       a-scene {
-        flex-grow: 1; /* Fill the remaining space with the A-Frame scene */
+        flex-grow: 1;
         background-color: white;
-        z-index: 0; /* Scene is at the bottom layer */
+        z-index: 0;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <!-- Title -->
-      <div class="title">AIR2FOUR 3D Model</div>
+    <!-- Title -->
+    <div class="title">AIR2ONE 3D Model</div>
 
-      
-      <!-- Logo -->
-      <div class="logo-Air2-line"></div>
-<!-- Logo -->
-      <a
-        href="https://memolocks.com/en/"
-        class="logo-link"
-        style="bottom: 50px;"
-        target="_blank"
-        title="Visit MemoLocks"
-         >
-      <div class="logo-Memo"></div>
-</a>
-      <!-- A-Frame Scene -->
-      <a-scene vr-mode-ui="enable: false;">
-        <!-- Load the 3D model -->
-        <a-assets>
-          <a-asset-item
-            id="testModel"
-            src="https://cachiaradia.github.io/AR/air2four%20test-gbl-v2.glb"
-          ></a-asset-item>
-        </a-assets>
+    <!-- Logo -->
+    <div class="logo-Air2-line"></div>
+    <div class="icon"> </div>
 
-        <!-- Display the 3D model -->
-        <a-entity
-          gltf-model="#testModel"
-          scale="40 40 40"
-          position="00 -2 -8"
-          play-all-model-animations=""
-          look-controls
-        ></a-entity>
-
-        <!-- Camera with motion controls -->
-        <a-entity camera></a-entity>
-      </a-scene>
+    <!-- Pop-up Modal -->
+    <div class="popup" id="popup">
+      <div>
+        Interact with the 3D Object:
+        <br />Mobile: Move your device 360°. / Touch: Use gestures to rotate. /
+        Desktop: Use a mouse or touchpad.
+      </div>
     </div>
+
+    <!-- Info Icon -->
+    <div class="info-icon"></div>
+
+    <!-- Logo -->
+    <a
+      href="https://memolocks.com/en/"
+      class="logo-link"
+      style="bottom: 50px"
+      target="_blank"
+      title="Visit MemoLocks website"
+    >
+      <div class="logo-Memo"></div>
+    </a>
+
+    <!-- A-Frame Scene -->
+    <a-scene vr-mode-ui="enable: false;">
+      <!-- Load the 3D model -->
+      <a-assets>
+        <a-asset-item
+          id="testModel"
+          src="https://memo-international.github.io/Augmented-Reality/air2-external-reader-controller.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- Display the 3D model -->
+      <a-entity
+        gltf-model="#testModel"
+        scale="40 40 40"
+        position="0 -1.5 -7"
+        play-all-model-animations=""
+        look-controls
+      ></a-entity>
+
+      <!-- Camera with motion controls -->
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+      // Wait for the page to load
+      window.onload = function () {
+        const textElement = document.getElementById("popup");
+
+        // Set a timeout to hide the pop-up after 5 seconds
+        setTimeout(() => {
+          textElement.style.display = "none"; // Hide the pop-up after 5 seconds
+        }, 5000); // 5000ms = 5 seconds
+      };
+    </script>
   </body>
 </html>
