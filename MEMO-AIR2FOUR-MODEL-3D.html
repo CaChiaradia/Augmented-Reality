@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AIR2FOUR 3D Model</title>
+    <title>Página da Empresa - AIR2FOUR 3D Model</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <style>
       body {
@@ -12,21 +12,26 @@
         font-family: Arial, sans-serif;
       }
 
-      .title {
-        margin-top: 20px;
-        color: black;
-        font-size: 24px;
+      /* Cabeçalho */
+      header {
+        background-color: #ddc39a; /* Cor do cabeçalho */
+        padding: 20px;
         text-align: center;
-        background: rgba(255, 255, 255, 0.8);
-        padding: 10px 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 2;
+      }
+
+      header img {
+        width: 100px; /* Ajuste o tamanho do logotipo conforme necessário */
+      }
+
+      h1 {
+        font-size: 5vw; /* Responsividade do título */
+        color: #fff;
+        margin-top: 10px;
       }
 
       .logo-Air2-line {
         position: absolute;
-        top: 90px;
+        top: 500px;
         width: 100%;
         height: 15%;
         background-image: url("https://memolocks.com/wp-content/uploads/2024/08/aie2line-logo.svg");
@@ -35,9 +40,10 @@
         background-position: center;
         z-index: 1;
       }
+
       .icon {
         position: absolute;
-        top: 210px;
+        top: 170px;
         width: 100%;
         height: 8%;
         background-image: url("https://memo-international.github.io/Augmented-Reality/3d-modeling.png");
@@ -48,7 +54,7 @@
       }
 
       /* Pop-up Modal Styles */
-      .popup { 
+      .popup {
         position: fixed;
         top: 45%;
         left: 50%;
@@ -62,16 +68,21 @@
         display: block; /* Initially visible */
       }
 
-      .logo-Memo {
-        position: absolute;
-        bottom: 60px;
+      /* Rodapé */
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        position: fixed;
         width: 100%;
-        height: 100%;
-        background-image: url("https://memolocks.com/wp-content/uploads/2024/07/favicon.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 1;
+        bottom: 0;
+        text-align: center;
+      }
+      footer img {
+        width: 50px;
+      }
+      footer p {
+        margin: 0;
       }
 
       .logo-link {
@@ -88,19 +99,26 @@
     </style>
   </head>
   <body>
-    <!-- Title -->
-    <div class="title">AIR2FOUR 3D Model</div>
+    <!-- Cabeçalho -->
+    <header>
+      <a href="https://memolocks.com/en/" target="_blank">
+        <img
+          src="https://memolocks.com/wp-content/uploads/2025/01/Logo-Memo-Black.svg"
+        />
+      </a>
+      <h1>AR2FOUR 3D Model</h1>
+    </header>
 
     <!-- Logo -->
     <div class="logo-Air2-line"></div>
-    <div class="icon"> </div>
+    <div class="icon"></div>
 
     <!-- Pop-up Modal -->
     <div class="popup" id="popup">
       <div>
-        Interact with the 3D Object:
-        <br />Mobile: Move your device 360°. / Touch: Use gestures to rotate. /
-        Desktop: Use a mouse or touchpad.
+        Interaja com o Modelo 3D:
+        <br />Mobile: Movimente seu dispositivo em 360°. / Toque: Use gestos
+        para rotacionar. / Desktop: Use o mouse ou touchpad.
       </div>
     </div>
 
@@ -113,14 +131,14 @@
       class="logo-link"
       style="bottom: 50px"
       target="_blank"
-      title="Visit MemoLocks website"
+      title="Visit MemoLocks"
     >
       <div class="logo-Memo"></div>
     </a>
 
     <!-- A-Frame Scene -->
     <a-scene vr-mode-ui="enable: false;">
-      <!-- Load the 3D model -->
+      <!-- Carregar o modelo 3D -->
       <a-assets>
         <a-asset-item
           id="testModel"
@@ -128,28 +146,33 @@
         ></a-asset-item>
       </a-assets>
 
-      <!-- Display the 3D model -->
+      <!-- Exibir o modelo 3D -->
       <a-entity
         gltf-model="#testModel"
         scale="40 40 40"
-        position="0 -1.5 -7"
+        position="0 -2 -7"
         play-all-model-animations=""
         look-controls
       ></a-entity>
 
-      <!-- Camera with motion controls -->
+      <!-- Câmera com controles de movimento -->
       <a-entity camera></a-entity>
     </a-scene>
 
+    <!-- Rodapé -->
+    <footer>
+      <p>© 2024 MEMO International Ltd. All rights reserved.</p>
+    </footer>
+
     <script>
-      // Wait for the page to load
+      // Esperar a página carregar
       window.onload = function () {
         const textElement = document.getElementById("popup");
 
-        // Set a timeout to hide the pop-up after 5 seconds
+        // Definir um tempo limite para esconder o pop-up após 5 segundos
         setTimeout(() => {
-          textElement.style.display = "none"; // Hide the pop-up after 5 seconds
-        }, 5000); // 5000ms = 5 seconds
+          textElement.style.display = "none"; // Esconder o pop-up após 5 segundos
+        }, 5000); // 5000ms = 5 segundos
       };
     </script>
   </body>
