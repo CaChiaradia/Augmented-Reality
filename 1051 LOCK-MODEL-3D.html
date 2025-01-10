@@ -205,6 +205,13 @@
         setTimeout(() => {
           textElement.style.display = "none"; // Esconder o pop-up após 5 segundos
         }, 5000); // 5000ms = 5 segundos
+// Aguarda 10 segundos (tempo da animação) e ativa os controles
+      setTimeout(() => {
+        // Ativa os controles de movimento da câmera
+        const camera = document.querySelector('#camera');
+        camera.setAttribute('wasd-controls-enabled', 'true');
+        camera.setAttribute('look-controls-enabled', 'true');
+      }, 10000); // 10 segundos (igual à duração da animação)
       };
     </script>
   </body>
