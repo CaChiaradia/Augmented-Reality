@@ -17,27 +17,27 @@
 
       /* Cabeçalho */
       header {
-        background-color: #ddc39a; /* Cor do cabeçalho */
+        background-color: #ddc39a;
         padding: 20px;
         text-align: center;
         width: 100%;
       }
 
       header img {
-        width: 80px; /* Ajuste o tamanho do logotipo para responsividade */
-        cursor: pointer; /* Para dar uma indicação de que é clicável */
+        width: 80px;
+        cursor: pointer;
         max-width: 100%;
       }
 
       h1 {
-        font-size: 4vw; /* Responsividade do título */
+        font-size: 4vw;
         color: #fff;
         margin-top: 10px;
       }
 
       .logo-Air2-line {
-        position: fixed; /* Fixado em relação à janela */
-        bottom: 50px; /* Distância do rodapé */
+        position: fixed;
+        bottom: 50px;
         width: 100%;
         height: 15%;
         background-image: url("https://memolocks.com/wp-content/uploads/2024/08/aie2line-logo.svg");
@@ -47,7 +47,6 @@
         z-index: 1;
       }
 
-      /* Ícones e texto */
       .icon-container {
         position: absolute;
         top: 170px;
@@ -61,18 +60,17 @@
       }
 
       .icon-container img {
-        width: 50px; /* Ajuste o tamanho do ícone */
+        width: 50px;
         max-width: 100%;
       }
 
       .popup-text {
-        font-size: 4vw; /* Tornar o texto responsivo */
+        font-size: 4vw;
         color: black;
         font-weight: bold;
         text-align: center;
       }
 
-      /* Pop-up Modal Styles */
       .popup {
         position: fixed;
         top: 45%;
@@ -84,11 +82,10 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         z-index: 3;
         text-align: center;
-        display: block; /* Initially visible */
+        display: block;
         max-width: 90%;
       }
 
-      /* Rodapé */
       footer {
         background-color: #333;
         color: white;
@@ -118,6 +115,27 @@
         flex-grow: 1;
         background-color: white;
         z-index: 0;
+      }
+
+      /* Estilo para o botão de voltar */
+      #backButton {
+        position: fixed;
+        bottom: 50px;
+        right: 40px;
+        background-color: #555;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        opacity: 0.8;
+        z-index: 10;
+        transition: opacity 0.3s ease;
+      }
+
+      #backButton:hover {
+        opacity: 1;
       }
     </style>
   </head>
@@ -190,20 +208,23 @@
       <a-entity camera></a-entity>
     </a-scene>
 
+    <!-- Botão de voltar -->
+    <button id="backButton" onclick="window.location.href='https://memolocks.com/en/order-platform/'">
+      Back
+    </button>
+
     <!-- Rodapé -->
     <footer>
       <p>© 2024 MEMO International Ltd. All rights reserved.</p>
     </footer>
 
     <script>
-      // Esperar a página carregar
+      // Esconder o pop-up após 5 segundos
       window.onload = function () {
         const textElement = document.getElementById("popup");
-
-        // Definir um tempo limite para esconder o pop-up após 5 segundos
         setTimeout(() => {
-          textElement.style.display = "none"; // Esconder o pop-up após 5 segundos
-        }, 5000); // 5000ms = 5 segundos
+          textElement.style.display = "none";
+        }, 5000); // 5 segundos
       };
     </script>
   </body>
