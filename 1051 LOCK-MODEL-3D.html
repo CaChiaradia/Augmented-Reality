@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memo International - AIR2MINI 3D Model</title>
+    <title>Memo International - Lock1051 3D Model</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <style>
       body {
@@ -130,7 +130,7 @@
           alt="MemoLocks Logo"
         />
       </a>
-      <h1>AR2MINI 3D Model</h1>
+      <h1>Lock 1051 3D Model</h1>
     </header>
 
     <!-- Logo -->
@@ -184,7 +184,6 @@
         position="0.1 -1.5 -12"
         play-all-model-animations=""
         look-controls
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
       ></a-entity>
 
       <!-- Câmera com controles de movimento -->
@@ -204,14 +203,7 @@
         // Definir um tempo limite para esconder o pop-up após 5 segundos
         setTimeout(() => {
           textElement.style.display = "none"; // Esconder o pop-up após 5 segundos
-        }, 5000); // 5000ms = 5 segundos
-// Aguarda 10 segundos (tempo da animação) e ativa os controles
-      setTimeout(() => {
-        // Ativa os controles de movimento da câmera
-        const camera = document.querySelector('#camera');
-        camera.setAttribute('wasd-controls-enabled', 'true');
-        camera.setAttribute('look-controls-enabled', 'true');
-      }, 10000); // 10 segundos (igual à duração da animação)
+        }, 4000); // 5000ms = 5 segundos
       };
     </script>
   </body>
